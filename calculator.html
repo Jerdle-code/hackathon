@@ -2,12 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="bootstrap.css" rel="stylesheet">
     <title>Calculator</title>
 </head>
 <body>
-    <form>
-        <label>Miles driven/year:</label> <input type="text" />
-        <input type="button" />
-    </form>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1 d-none d-md-block bg-primary"></div>
+        <div class="col-12 col-md-10">
+            <header>
+                <h1 class="text-primary">Calculator</h1>
+            </header>
+            <form>
+                <label for="driving-distance" class="form-label">Distance Driven (miles / year)</label>
+                <input type="text" class="form-control" id="driving-distance" />
+                <label for="car-size" class="form-label">Car Size</label>
+                <select class="form-select" id="car-size">
+                    <option value="1">Small (e.g. Mini Cooper)</option>
+                    <option value="2">Medium (e.g. VW Golf)</option>
+                    <option value="3">Large (e.g. BMW 5 Series)</option>
+                    <option value="4">SUV</option>
+                    <option value="5">Van</option>
+                </select>
+                <label for="car-fuel" class="form-label">Car Fuel</label>
+                <select class="form-select" id="car-fuel">
+                    <option value="1">Petrol</option>
+                    <option value="2">Diesel</option>
+                    <option value="3">Electric</option>
+                    <option value="4">Hybrid</option>
+                </select>
+            </form>
+        </div>
+        <div class="col-md-1 d-none d-md-block bg-primary"></div>
+    </div>
+</div>
 </body>
 </html>
