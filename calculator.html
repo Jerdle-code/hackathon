@@ -13,18 +13,18 @@
             <header>
                 <h1 class="text-primary">Calculator</h1>
             </header>
-            <form>
-                <div class="accordion" id="form-accordion">
+            <form action="results.php" method="post">
+                <div class="accordion" id="form">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#driving" aria-expanded="true" aria-controls="driving">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#driving">
                                 Driving
                             </button>
                         </h2>
-                        <div id="driving" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#form-accordion">
+                        <div id="driving" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#form">
                             <div class="accordion-body">
-                                <label for="driving-distance" class="form-label">Distance Driven (miles / year)</label>
-                                <input type="number" class="form-control" id="driving-distance" step="500" />
+                                <label for="driving-distance" class="form-label">Distance Driven (miles / week)</label>
+                                <input type="number" class="form-control" id="driving-distance" />
                                 <label for="car-size" class="form-label">Car Size</label>
                                 <select class="form-select" id="car-size">
                                     <option value="1">Small (e.g. Mini Cooper)</option>
@@ -44,11 +44,11 @@
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#fuel" aria-expanded="true" aria-controls="driving">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#fuel">
                                 Fuel
                             </button>
                         </h2>
-                        <div id="fuel" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#form-accordion">
+                        <div id="fuel" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#form">
                             <div class="accordion-body">
                                 <label for="electric" class="form-label">How many kWh of electricity do you use per week?</label>
                                 <input type="number" class="form-control" id="electric" />
@@ -59,8 +59,23 @@
                             </div>
                         </div>
                     </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flights">
+                                Flights
+                            </button>
+                        </h2>
+                        <div id="flights" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#form">
+                            <div class="accordion-body">
+                                <label for="flight_num" class="form-label">How many flights do you take per year?</label>
+                                <input type="number" class="form-control" id="flight_num" />
+                                <label for="flight_length" class="form-label">How long are your average flights (km)?</label>
+                                <input type="number" class="form-control" id="flight_length" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <input type="button">
+                <button type="submit" form="form" value="Submit" class="btn btn-outline-primary">Submit</button>
             </form>
         </div>
         <div class="col-md-1 d-none d-md-block bg-primary"></div>
