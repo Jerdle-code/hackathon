@@ -31,7 +31,6 @@
                                     <option value="2">Medium (e.g. VW Golf)</option>
                                     <option value="3">Large (e.g. BMW 5 Series)</option>
                                     <option value="4">SUV</option>
-                                    <option value="5">Van</option>
                                 </select>
                                 <label for="car-fuel" class="form-label">Car Fuel</label>
                                 <select class="form-select" id="car-fuel">
@@ -45,33 +44,23 @@
                     </div>
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#food" aria-expanded="true" aria-controls="driving">
-                                Driving
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#fuel" aria-expanded="true" aria-controls="driving">
+                                Fuel
                             </button>
                         </h2>
-                        <div id="food" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#form-accordion">
+                        <div id="fuel" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#form-accordion">
                             <div class="accordion-body">
-                                <label for="driving-distance" class="form-label">Distance Driven (miles / year)</label>
-                                <input type="number" class="form-control" id="driving-distance" step="500" />
-                                <label for="car-size" class="form-label">Car Size</label>
-                                <select class="form-select" id="car-size">
-                                    <option value="1">Small (e.g. Mini Cooper)</option>
-                                    <option value="2">Medium (e.g. VW Golf)</option>
-                                    <option value="3">Large (e.g. BMW 5 Series)</option>
-                                    <option value="4">SUV</option>
-                                    <option value="5">Van</option>
-                                </select>
-                                <label for="car-fuel" class="form-label">Car Fuel</label>
-                                <select class="form-select" id="car-fuel">
-                                    <option value="1">Petrol</option>
-                                    <option value="2">Diesel</option>
-                                    <option value="3">Electric</option>
-                                    <option value="4">Hybrid</option>
-                                </select>
+                                <label for="electric" class="form-label">How many kWh of electricity do you use per week?</label>
+                                <input type="number" class="form-control" id="electric" />
+                                <label for="gas" class="form-label">How much gas do you use per week?</label>
+                                <input type="number" class="form-control" id="gas" />
+                                <label for="coal" class="form-label">How much coal do you use per year (tonnes)?</label>
+                                <input type="number" class="form-control" id="coal" />
                             </div>
                         </div>
                     </div>
                 </div>
+                <input type="button">
             </form>
         </div>
         <div class="col-md-1 d-none d-md-block bg-primary"></div>
