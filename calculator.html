@@ -14,27 +14,41 @@
                 <h1 class="text-primary">Calculator</h1>
             </header>
             <form>
-                <label for="driving-distance" class="form-label">Distance Driven (miles / year)</label>
-                <input type="text" class="form-control" id="driving-distance" />
-                <label for="car-size" class="form-label">Car Size</label>
-                <select class="form-select" id="car-size">
-                    <option value="1">Small (e.g. Mini Cooper)</option>
-                    <option value="2">Medium (e.g. VW Golf)</option>
-                    <option value="3">Large (e.g. BMW 5 Series)</option>
-                    <option value="4">SUV</option>
-                    <option value="5">Van</option>
-                </select>
-                <label for="car-fuel" class="form-label">Car Fuel</label>
-                <select class="form-select" id="car-fuel">
-                    <option value="1">Petrol</option>
-                    <option value="2">Diesel</option>
-                    <option value="3">Electric</option>
-                    <option value="4">Hybrid</option>
-                </select>
+                <div class="accordion" id="form-accordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#driving" aria-expanded="true" aria-controls="driving">
+                                Driving
+                            </button>
+                        </h2>
+                        <div id="driving" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#form-accordion">
+                            <div class="accordion-body">
+                                <label for="driving-distance" class="form-label">Distance Driven (miles / year)</label>
+                                <input type="number" class="form-control" id="driving-distance" step="500" />
+                                <label for="car-size" class="form-label">Car Size</label>
+                                <select class="form-select" id="car-size">
+                                    <option value="1">Small (e.g. Mini Cooper)</option>
+                                    <option value="2">Medium (e.g. VW Golf)</option>
+                                    <option value="3">Large (e.g. BMW 5 Series)</option>
+                                    <option value="4">SUV</option>
+                                    <option value="5">Van</option>
+                                </select>
+                                <label for="car-fuel" class="form-label">Car Fuel</label>
+                                <select class="form-select" id="car-fuel">
+                                    <option value="1">Petrol</option>
+                                    <option value="2">Diesel</option>
+                                    <option value="3">Electric</option>
+                                    <option value="4">Hybrid</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
         <div class="col-md-1 d-none d-md-block bg-primary"></div>
     </div>
 </div>
+<script src="bootstrap.min.js"></script>
 </body>
 </html>
