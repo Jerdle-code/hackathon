@@ -7,7 +7,7 @@
 <body>
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-1 d-none d-md-block bg-primary"></div>
+        <div class="col-md-1 d-none d-md-block bg-primary min-vh-100"></div>
         <div class="col-12 col-md-10">
             <h1 class="text-primary">Your Carbon Footprint</h1>
 
@@ -26,7 +26,8 @@ $flight_co2 = $_POST["flights"]*1.6093844*0.19085*$_POST["flight-distance"];
 $co2_meat = 6; //Meat meals are usually half meat
 $co2_not_meat = 2;
 $kg_year = 823;
-$food_co2 = $kg_year*(($co2_meat-$co2_not_meat)*($_POST["animal-products"]/21)+$co2_not_meat*21);
+$proportion_meat = $_POST["animal-products"]/21;
+$food_co2 = $kg_year * ($co2_meat*$proportion_meat + $co2_not_meat*(1-$proportion_meat));
 
 $total_co2 = $car_co2 + $fuel_co2 + $flight_co2 + $food_co2;
 
@@ -45,7 +46,7 @@ if($max_co2 == $car_co2){
     echo "Use cleaner fuel and heating. Electricity is better than gas and coal. <br>";
 } else if ($max_co2 == $flight_co2){
     echo "Take fewer flights. <br>";
-} else {
+} else if ($max_co2 > 1647){
     echo "Eat less meat and animal products. <br>";
 }
 ?>
