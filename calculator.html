@@ -24,20 +24,20 @@
                         <div id="driving" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#form">
                             <div class="accordion-body">
                                 <label for="driving-distance" class="form-label">Distance Driven (miles / week)</label>
-                                <input type="number" class="form-control" id="driving-distance" />
+                                <input type="number" class="form-control" id="driving-distance" name="miles"/>
                                 <label for="car-size" class="form-label">Car Size</label>
-                                <select class="form-select" id="car-size">
-                                    <option value="1">Small (e.g. Mini Cooper)</option>
-                                    <option value="2">Medium (e.g. VW Golf)</option>
-                                    <option value="3">Large (e.g. BMW 5 Series)</option>
-                                    <option value="4">SUV</option>
+                                <select class="form-select" id="car-size" name="car-size">
+                                    <option value="small">Small (e.g. Mini Cooper)</option>
+                                    <option value="medium">Medium (e.g. VW Golf)</option>
+                                    <option value="large">Large (e.g. BMW 5 Series)</option>
+                                    <option value="SUV">SUV</option>
                                 </select>
                                 <label for="car-fuel" class="form-label">Car Fuel</label>
-                                <select class="form-select" id="car-fuel">
-                                    <option value="1">Petrol</option>
-                                    <option value="2">Diesel</option>
-                                    <option value="3">Electric</option>
-                                    <option value="4">Hybrid</option>
+                                <select class="form-select" id="car-fuel" name="car-fuel">
+                                    <option value="petrol">Petrol</option>
+                                    <option value="diesel">Diesel</option>
+                                    <option value="electric">Electric</option>
+                                    <option value="hybrid">Hybrid</option>
                                 </select>
                             </div>
                         </div>
@@ -51,11 +51,11 @@
                         <div id="fuel" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#form">
                             <div class="accordion-body">
                                 <label for="electric" class="form-label">How many kWh of electricity do you use per week?</label>
-                                <input type="number" class="form-control" id="electric" />
-                                <label for="gas" class="form-label">How much gas do you use per week?</label>
-                                <input type="number" class="form-control" id="gas" />
+                                <input type="number" class="form-control" id="electric" name="electric"/>
+                                <label for="gas" class="form-label">How much gas do you use per month (m<sup>3</sup>)?</label>
+                                <input type="number" class="form-control" id="gas" name="gas"/>
                                 <label for="coal" class="form-label">How much coal do you use per year (tonnes)?</label>
-                                <input type="number" class="form-control" id="coal" />
+                                <input type="number" class="form-control" id="coal" name="coal"/>
                             </div>
                         </div>
                     </div>
@@ -68,9 +68,9 @@
                         <div id="flights" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#form">
                             <div class="accordion-body">
                                 <label for="flight_num" class="form-label">How many flights do you take per year (a round trip is 2)?</label>
-                                <input type="number" class="form-control" id="flight_num" />
+                                <input type="number" class="form-control" id="flight_num" name="flights"/>
                                 <label for="flight_length" class="form-label">How long are your average flights (miles)?</label>
-                                <input type="number" class="form-control" id="flight_length" />
+                                <input type="number" class="form-control" id="flight_length" name="flight-length"/>
                             </div>
                         </div>
                     </div>
