@@ -18,7 +18,16 @@ $flight_co2 = $_POST["flights"]*1.6093844*0.19085*$_POST["flight-distance"];
 
 $total_co2 = $car_co2 + $fuel_co2 + $flight_co2;
 
-echo "Your carbon footprint is " . $total_co2 . "kg CO<sub>2</sub>e/yr."
+echo "Your carbon footprint is " . $total_co2 . "kg CO<sub>2</sub>e/yr.";
+
+$max_co2 = max($car_co2, $fuel_co2, $flight_co2);
+if($max_co2 == $car_co2){
+    echo "Either reduce your travel or buy a less polluting car. Electric vehicles can be zero-emissions, and public transport is generally lower-emissions than cars."
+} else if ($max_co2 == $fuel_co2){
+    echo "Use cleaner fuel and heating. Electricity is better than gas and coal."
+} else {
+    echo "Take fewer flights."
+}
 ?>
 
 </body>
