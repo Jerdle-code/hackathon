@@ -23,7 +23,12 @@ $fuel_co2 = $co2_electric + $co2_gas + $co2_coal;
 
 $flight_co2 = $_POST["flights"]*1.6093844*0.19085*$_POST["flight-distance"];
 
-$total_co2 = $car_co2 + $fuel_co2 + $flight_co2;
+$co2_meat = 6; //Meat meals are usually half meat
+$co2_not_meat = 2;
+$kg_year = 823;
+$food_co2 = $kg_year*(($co2_meat-$co2_not_meat)*($_POST["animal-products"]/21)+$co2_not_meat*21);
+
+$total_co2 = $car_co2 + $fuel_co2 + $flight_co2 + $food_co2;
 
 echo "Your carbon footprint is " . round($total_co2) . "kg CO<sub>2</sub>e/yr. <br>";
 echo "This is composed of";
@@ -31,14 +36,17 @@ echo "<ul>";
 echo "<li>" . round($car_co2) . "kg CO<sub>2</sub>e/yr from cars. </li>";
 echo "<li>" . round($fuel_co2) . "kg CO<sub>2</sub>e/yr from utilities. </li>";
 echo "<li>" . round($flight_co2) . "kg CO<sub>2</sub>e/yr from flights. </li>";
+echo "<li>" . round($food_co2) . "kg CO<sub>2</sub>e/yr from food. </li>";
 echo "</ul>";
-$max_co2 = max($car_co2, $fuel_co2, $flight_co2);
+$max_co2 = max($car_co2, $fuel_co2, $flight_co2, $food_co2);
 if($max_co2 == $car_co2){
     echo "Either reduce your travel or buy a less polluting car. Electric vehicles can be zero-emissions, and public transport is generally lower-emissions than cars. <br>";
 } else if ($max_co2 == $fuel_co2){
     echo "Use cleaner fuel and heating. Electricity is better than gas and coal. <br>";
-} else {
+} else if ($max_co2 == $flight_co2){
     echo "Take fewer flights. <br>";
+} else {
+    echo "Eat less meat and animal products. <br>";
 }
 ?>
         </div>
