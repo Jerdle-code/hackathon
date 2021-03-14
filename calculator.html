@@ -13,7 +13,7 @@
             <header>
                 <h1 class="text-primary">Calculator</h1>
             </header>
-            <form action="results.php" method="post">
+            <form action="result.php" method="post" id="form_proper">
                 <div class="accordion" id="form">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
@@ -67,15 +67,15 @@
                         </h2>
                         <div id="flights" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#form">
                             <div class="accordion-body">
-                                <label for="flight_num" class="form-label">How many flights do you take per year?</label>
+                                <label for="flight_num" class="form-label">How many flights do you take per year (a round trip is 2)?</label>
                                 <input type="number" class="form-control" id="flight_num" />
-                                <label for="flight_length" class="form-label">How long are your average flights (km)?</label>
+                                <label for="flight_length" class="form-label">How long are your average flights (miles)?</label>
                                 <input type="number" class="form-control" id="flight_length" />
                             </div>
                         </div>
                     </div>
                 </div>
-                <button type="submit" form="form" value="Submit" class="btn btn-outline-primary">Submit</button>
+                <input type="submit" form="form_proper" value="Submit" class="btn btn-outline-primary" />
             </form>
         </div>
         <div class="col-md-1 d-none d-md-block bg-primary"></div>
