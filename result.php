@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <link href="bootstrap.css" rel="stylesheet">
+    <title>Your Carbon Footprint</title>
+</head>
 <body>
-
-<h1>Your Carbon Footprint</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1 d-none d-md-block bg-primary"></div>
+        <div class="col-12 col-md-10">
+            <h1 class="text-primary">Your Carbon Footprint</h1>
 
 <?php
 $co2_per_mile = array("smallpetrol"=>0.23877, "mediumpetrol"=>0.30029, "largepetrol"=>0.44752, "SUVpetrol"=>0.35156, "smalldiesel"=>0.22082, "mediumdiesel"=>0.26775, "largediesel"=>0.32863, "SUVdiesel"=>0.30805, "smallhybrid"=>0.16538, "mediumhybrid"=>0.17216, "largehybrid"=>0.23304, "SUVhybrid"=>0.31837, "smallelectric"=>0, "mediumelectric"=>0, "largeelectric"=>0, "SUVelectric"=>0);
@@ -18,17 +25,26 @@ $flight_co2 = $_POST["flights"]*1.6093844*0.19085*$_POST["flight-distance"];
 
 $total_co2 = $car_co2 + $fuel_co2 + $flight_co2;
 
-echo "Your carbon footprint is " . $total_co2 . "kg CO<sub>2</sub>e/yr.";
-
+echo "Your carbon footprint is " . round($total_co2) . "kg CO<sub>2</sub>e/yr. <br>";
+echo "This is composed of";
+echo "<ul>";
+echo "<li>" . round($car_co2) . "kg CO<sub>2</sub>e/yr from cars. </li>";
+echo "<li>" . round($fuel_co2) . "kg CO<sub>2</sub>e/yr from utilities. </li>";
+echo "<li>" . round($flight_co2) . "kg CO<sub>2</sub>e/yr from flights. </li>";
+echo "</ul>";
 $max_co2 = max($car_co2, $fuel_co2, $flight_co2);
 if($max_co2 == $car_co2){
-    echo "Either reduce your travel or buy a less polluting car. Electric vehicles can be zero-emissions, and public transport is generally lower-emissions than cars."
+    echo "Either reduce your travel or buy a less polluting car. Electric vehicles can be zero-emissions, and public transport is generally lower-emissions than cars. <br>";
 } else if ($max_co2 == $fuel_co2){
-    echo "Use cleaner fuel and heating. Electricity is better than gas and coal."
+    echo "Use cleaner fuel and heating. Electricity is better than gas and coal. <br>";
 } else {
-    echo "Take fewer flights."
+    echo "Take fewer flights. <br>";
 }
 ?>
+        </div>
+        <div class="col-md-1 d-none d-md-block bg-primary"></div>
+    </div>
+</div>
 
 </body>
 </html>
